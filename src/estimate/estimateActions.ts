@@ -5,7 +5,7 @@ export interface EstimateAction {
 }
 const types = { NEW_ESTIMATE: "ESTIMATE/NEW" };
 
-interface NewEstimateAction extends EstimateAction {
+export interface NewEstimateAction extends EstimateAction {
   value: Estimate;
 }
 

@@ -1,7 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { EstimateStateProvider, EstimateDisplay } from "./estimate";
+import {
+  EstimateStateProvider,
+  EstimateDisplay,
+  EstimateButton
+} from "./estimate";
 function App() {
   return (
     <div className="App">
@@ -21,6 +25,7 @@ function App() {
       </header> */}
       <EstimateStateProvider>
         <EstimateDisplay />
+        <EstimateButton />
       </EstimateStateProvider>
     </div>
   );
