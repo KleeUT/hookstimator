@@ -6,7 +6,7 @@ export const EstimateDisplay = () => {
   return (
     <div>
       <h1 data-testid="heading">Estimate</h1>
-      <EstimateText estimate={undefined} />
+      <EstimateText estimate={state.latestEstimate} />
       {/* <p>{JSON.stringify(state)}</p> */}
     </div>
   );

@@ -3,7 +3,7 @@ import "jest-dom/extend-expect";
 import { render, cleanup } from "react-testing-library";
 import { EstimateDisplay } from "./EstimateDisplay";
 import { useEstimateState } from "./EstimateStateProvider";
-import { Estimate, EstimateState } from "./EstimateState";
+import { EstimateState } from "./EstimateState";
 jest.mock("./EstimateStateProvider", () => ({
   useEstimateState: jest.fn()
 }));
@@ -13,13 +13,13 @@ describe("Estimate Display", () => {
     jest.resetAllMocks();
   });
   it("should display a heading", () => {
-    (useEstimateState as jest.Mock).mockReturnValue(() => ({}));
+    (useEstimateState as jest.Mock).mockReturnValue({ state: {} });
     const { getByTestId } = render(<EstimateDisplay />);
     expect(getByTestId("heading")).toHaveTextContent("Estimate");
   });
 
   it("should display no estimate before the first is generated", () => {
-    (useEstimateState as jest.Mock).mockReturnValue(() => ({}));
+    (useEstimateState as jest.Mock).mockReturnValue({ state: {} });
     const { getByTestId } = render(<EstimateDisplay />);
     expect(getByTestId("estimate")).toHaveTextContent("No Estimate");
   });
@@ -33,8 +33,10 @@ describe("Estimate Display", () => {
       },
       previousEstimates: []
     };
-    (useEstimateState as jest.Mock).mockReturnValue(() => sampleState);
+    (useEstimateState as jest.Mock).mockReturnValue({ state: sampleState });
     const { getByTestId } = render(<EstimateDisplay />);
-    expect(getByTestId("estimate")).toHaveTextContent("No Estimate");
+    expect(getByTestId("estimate")).toHaveTextContent(
+      "1 lazy dog dangling afternoon"
+    );
   });
 });
