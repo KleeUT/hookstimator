@@ -35,12 +35,16 @@ export interface NewEstimateAction extends EstimateAction {
 }
 
 const newEstimateAction = (): NewEstimateAction => {
+  const units = randomUnitValue();
+  const modifier = randomModifierValue();
+  const value = randomDurationValue();
   return {
     type: types.NEW_ESTIMATE,
     value: {
-      units: randomUnitValue(),
-      modifier: randomModifierValue(),
-      value: randomDurationValue()
+      units,
+      modifier,
+      value,
+      id: `${units}${modifier}${value}${Math.random()}`
     }
   };
 };

@@ -5,9 +5,8 @@ export const EstimateDisplay = () => {
   const { state } = useEstimateState();
   return (
     <div>
-      <h1 data-testid="heading">Estimate</h1>
+      <h1 data-testid="heading">How Long Will It Take?</h1>
       <EstimateText estimate={state.latestEstimate} />
-      {/* <p>{JSON.stringify(state)}</p> */}
     </div>
   );
 };

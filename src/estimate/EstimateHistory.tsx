@@ -1,18 +1,16 @@
 import React from "react";
 import { useEstimateState } from "./EstimateStateProvider";
+import { Estimate } from "./EstimateState";
 const EstimateHistory = () => {
   const { state } = useEstimateState();
   return (
-    <ol>
+    <ul>
       {state.previousEstimates.map(estimate => (
-        <li
-          data-testid="history-estimate"
-          key={`${estimate.units}${estimate.modifier}${estimate.value}`}
-        >
+        <li data-testid="history-estimate" key={estimate.id}>
           {estimate.units} {estimate.modifier} {estimate.value}
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
 

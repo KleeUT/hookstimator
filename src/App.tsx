@@ -4,7 +4,8 @@ import "./App.css";
 import {
   EstimateStateProvider,
   EstimateDisplay,
-  EstimateButton
+  EstimateButton,
+  EstimateHistory
 } from "./estimate";
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <EstimateStateProvider>
         <EstimateDisplay />
         <EstimateButton />
+        <EstimateHistory />
       </EstimateStateProvider>
     </div>
   );

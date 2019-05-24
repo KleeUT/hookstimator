@@ -7,9 +7,11 @@ const reducer = (
 ): EstimateState => {
   switch (action.type) {
     case types.NEW_ESTIMATE:
-      const previousEstimates = [...state.previousEstimates];
+      let previousEstimates = [];
       if (state.latestEstimate) {
-        previousEstimates.push(state.latestEstimate);
+        previousEstimates = [state.latestEstimate, ...state.previousEstimates];
+      } else {
+        previousEstimates = [...state.previousEstimates];
       }
       return {
         ...state,
