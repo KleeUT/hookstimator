@@ -29,7 +29,7 @@ describe("Estimate History Display", () => {
     givenStateAndDispatch({
       latestEstimate: undefined,
       previousEstimates: [
-        { units: "red", modifier: "fish", value: "blue fish" }
+        { units: "red", modifier: "fish", value: "blue fish", id: "ID" }
       ]
     });
     const { findAllByTestId } = render(<EstimateHistory />);
@@ -40,12 +40,13 @@ describe("Estimate History Display", () => {
       done();
     });
   });
+
   it("Should display multiple esimtates if there is more than one in history", done => {
     givenStateAndDispatch({
       latestEstimate: undefined,
       previousEstimates: [
-        { units: "red", modifier: "fish", value: "blue fish" },
-        { units: "go", modifier: "dog", value: "go" }
+        { units: "red", modifier: "fish", value: "blue fish", id: "Id1" },
+        { units: "go", modifier: "dog", value: "go", id: "Id2" }
       ]
     });
     const { findAllByTestId } = render(<EstimateHistory />);

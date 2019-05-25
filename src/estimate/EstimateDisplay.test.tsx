@@ -15,7 +15,7 @@ describe("Estimate Display", () => {
   it("should display a heading", () => {
     (useEstimateState as jest.Mock).mockReturnValue({ state: {} });
     const { getByTestId } = render(<EstimateDisplay />);
-    expect(getByTestId("heading")).toHaveTextContent("Estimate");
+    expect(getByTestId("heading")).toHaveTextContent("How Long Will It Take?");
   });
 
   it("should display no estimate before the first is generated", () => {
@@ -29,7 +29,8 @@ describe("Estimate Display", () => {
       latestEstimate: {
         units: "1",
         modifier: "lazy dog dangling",
-        value: "afternoon"
+        value: "afternoon",
+        id: ""
       },
       previousEstimates: []
     };
