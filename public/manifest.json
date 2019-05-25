@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Estimator",
+  "name": "Stupid Estimator",
   "icons": [
     {
       "src": "favicon.ico",
